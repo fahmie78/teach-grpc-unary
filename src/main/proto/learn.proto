@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package learn;
+
+option java_multiple_files = true;
+option java_package = "my.com.prasarana.learn";
+
+message User {
+  uint32 id = 1;
+  string full_name = 2;
+  string nirc = 3;
+  uint32 age = 4;
+  string address = 5;
+}
+
+message Request_user{
+  uint32 id = 1;
+}
+
+service User_Service {
+  rpc getUser(Request_user) returns(User){};
+}
